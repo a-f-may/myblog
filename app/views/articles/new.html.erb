@@ -1,0 +1,24 @@
+
+<%= form_with model:@article, url:articles_path, method:"post" do |form| %>
+    
+    <div class="col-6 mx-auto">
+        <div class="my-3">
+        <%= form.label :title,"title",class:"form-label" %>
+        <%= form.text_field :title,class:"form-control"%>
+        </div>
+        <div class="my-3">
+        <%= form.label :content,"Content",class:"form-label" %>
+        <%= form.text_area :content,class:"form-control",style:"height:250px;" %>
+
+        </div>
+        <div class="my-3 mx-2">
+        <%= form.label :image,"Image",class:"form-label" %>
+        
+        <%= form.file_field :image,class:"form-control",id:"inputGroupFile02"%>
+        </div>
+
+        <div class="text-end" style="margin-top:50px;">
+            <%= form.submit "Post",class:"btn btn-success",style:"width:70px;"%>
+        </div>
+    </div>
+<% end %>
